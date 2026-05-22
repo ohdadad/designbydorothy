@@ -202,12 +202,15 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="flex items-center space-x-2">
+            <div class="flex items-center space-x-2 flex-wrap gap-y-2">
                 <button onclick="resetOriginalState()" class="px-3 py-1.5 bg-red-950/40 hover:bg-red-900 border border-red-800 text-xs rounded-full transition-all text-red-200">
                     <i class="fa-solid fa-rotate-left mr-1"></i> 원본 복원
                 </button>
-                <button onclick="saveAdminChanges()" class="px-4 py-1.5 bg-brand-gold hover:bg-yellow-500 text-brand-deep font-bold text-xs rounded-full transition-all flex items-center shadow-lg">
-                    <i class="fa-solid fa-circle-check mr-1"></i> 변경사항 저장
+                <button onclick="saveAdminChanges()" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/20 text-xs rounded-full transition-all text-white">
+                    <i class="fa-solid fa-floppy-disk mr-1"></i> 임시 저장
+                </button>
+                <button onclick="exportBakedHTML()" class="px-4 py-1.5 bg-brand-gold hover:bg-yellow-500 text-brand-deep font-bold text-xs rounded-full transition-all flex items-center shadow-lg animate-pulse" title="실제 배포할 새로운 HTML 파일을 다운로드합니다.">
+                    <i class="fa-solid fa-cloud-arrow-down mr-1"></i> 배포용 HTML 다운로드
                 </button>
                 <button onclick="logoutAdmin()" class="px-3 py-1.5 bg-white/10 hover:bg-white/20 border border-white/10 text-xs rounded-full transition-all">
                     로그아웃 <i class="fa-solid fa-sign-out-alt ml-1"></i>
@@ -232,10 +235,9 @@
 
             <!-- Navigation Links (Desktop) -->
             <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-700">
-                <a href="#about" class="hover:text-brand-primary transition-colors py-2">스튜디오 소개</a>
-                <a href="#carousel-section" class="hover:text-brand-primary transition-colors py-2">시그니처 컬렉션</a>
-                <a href="#portfolio" class="hover:text-brand-primary transition-colors py-2">포트폴리오</a>
-                <a href="#contact" class="hover:text-brand-primary transition-colors py-2">상담 문의</a>
+                <a href="#sec-about" class="hover:text-brand-primary transition-colors py-2">스튜디오 소개</a>
+                <a href="#sec-portfolio" class="hover:text-brand-primary transition-colors py-2">포트폴리오</a>
+                <a href="#sec-contact" class="hover:text-brand-primary transition-colors py-2">상담 문의</a>
             </nav>
 
             <!-- Social Links & CTA -->
@@ -245,9 +247,6 @@
                 </a>
                 <a href="https://m.blog.naver.com/PostList.naver?blogId=director_dorothy&tab=1" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-brand-primary transition-colors w-10 h-10 flex items-center justify-content bg-purple-50 rounded-full hover:bg-brand-lightGray" title="네이버블로그 방문하기">
                     <i class="fa-solid fa-blog text-md mx-auto"></i>
-                </a>
-                <a href="#contact" class="hidden sm:inline-block bg-brand-dark hover:bg-brand-primary text-white text-xs font-semibold px-5 py-3 rounded-full transition-all duration-300 transform hover:scale-105">
-                    디자인 상담하기
                 </a>
                 <!-- Mobile Menu Button -->
                 <button id="mobile-menu-btn" class="md:hidden text-brand-dark hover:text-brand-primary focus:outline-none" aria-label="메뉴 열기">
@@ -259,10 +258,9 @@
         <!-- Mobile Menu (Collapsible) -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-cream border-t border-purple-100 transition-all duration-300">
             <div class="px-5 py-4 space-y-3">
-                <a href="#about" class="block text-gray-800 hover:text-brand-primary font-medium py-2">스튜디오 소개</a>
-                <a href="#carousel-section" class="block text-gray-800 hover:text-brand-primary font-medium py-2">시그니처 컬렉션</a>
-                <a href="#portfolio" class="block text-gray-800 hover:text-brand-primary font-medium py-2">포트폴리오</a>
-                <a href="#contact" class="block text-gray-800 hover:text-brand-primary font-medium py-2">상담 문의</a>
+                <a href="#sec-about" class="block text-gray-800 hover:text-brand-primary font-medium py-2">스튜디오 소개</a>
+                <a href="#sec-portfolio" class="block text-gray-800 hover:text-brand-primary font-medium py-2">포트폴리오</a>
+                <a href="#sec-contact" class="block text-gray-800 hover:text-brand-primary font-medium py-2">상담 문의</a>
                 <hr class="border-purple-100 my-2">
                 <div class="flex items-center space-x-3 pt-2">
                     <a href="https://www.instagram.com/d_by_dorothy/" target="_blank" class="flex-1 bg-purple-50 hover:bg-brand-lightGray py-3 text-center rounded-lg text-brand-primary font-medium flex items-center justify-center space-x-2">
@@ -348,7 +346,7 @@
                                 <div class="absolute bottom-0 left-0 right-0 p-5 z-20 text-white">
                                     <span class="text-xs text-brand-gold font-bold tracking-widest editable-text" data-edit-id="car-tag-3">PENTHOUSE</span>
                                     <h3 class="text-lg font-serif font-bold mt-1 editable-text" data-edit-id="car-title-3">봉선동 한국아델리움 50평</h3>
-                                    <p class="text-xs text-gray-200 mt-1 editable-text" data-edit-id="car-desc-3">정교한 웨인스코팅 레이아웃과 샴페인 골드 악센트</p>
+                                    <p class="text-xs text-gray-200 mt-1 editable-text" data-edit-id="car-desc-3">정교한 웨인스코팅 레이아웃และ 샴페인 골드 악센트</p>
                                 </div>
                             </div>
                             <!-- Slide 4: Jangdeok Hoban -->
@@ -370,7 +368,7 @@
                                 <div class="absolute bottom-0 left-0 right-0 p-5 z-20 text-white">
                                     <span class="text-xs text-brand-gold font-bold tracking-widest editable-text" data-edit-id="car-tag-5">RESIDENCE</span>
                                     <h3 class="text-lg font-serif font-bold mt-1 editable-text" data-edit-id="car-title-5">수완지구 현진에버빌 45평</h3>
-                                    <p class="text-xs text-gray-200 mt-1 editable-text" data-edit-id="car-desc-5">천연 대리석 아트월 and 하이엔드 바스 테라피</p>
+                                    <p class="text-xs text-gray-200 mt-1 editable-text" data-edit-id="car-desc-5">천연 대리석 아트월 및 하이엔드 바스 테라피</p>
                                 </div>
                             </div>
                             <!-- Slide 6: Chipyeong Kumho -->
@@ -475,14 +473,7 @@
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
                         <div class="text-brand-primary text-xs font-bold tracking-widest uppercase mb-2 editable-text" data-edit-id="port-badge">Space Showcase</div>
-                        <h2 class="font-serif text-3xl sm:text-4xl text-brand-dark font-medium editable-text" data-edit-id="port-title">공간디렉터 시공 컬렉션</h2>
-                    </div>
-                    <!-- Filter Tabs -->
-                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
-                        <button class="portfolio-tab px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-brand-primary text-white" data-filter="all">전체보기</button>
-                        <button class="portfolio-tab px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-brand-lightGray text-brand-primary hover:bg-brand-primary hover:text-white" data-filter="living">거실 (Living Room)</button>
-                        <button class="portfolio-tab px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-brand-lightGray text-brand-primary hover:bg-brand-primary hover:text-white" data-filter="bedroom">침실 (Bedroom)</button>
-                        <button class="portfolio-tab px-5 py-2.5 rounded-full text-sm font-medium transition-all bg-brand-lightGray text-brand-primary hover:bg-brand-primary hover:text-white" data-filter="kitchen">주방/욕실 (Kitchen & Bath)</button>
+                        <h2 class="font-serif text-3xl sm:text-4xl text-brand-dark font-medium editable-text" data-edit-id="port-title">도로시 포트폴리오 컬렉션</h2>
                     </div>
                 </div>
 
@@ -771,11 +762,11 @@
             </div>
             <form onsubmit="tryAdminLogin(event)" class="space-y-4">
                 <div>
-                    <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">ID</label>
-                    <input type="text" id="admin-username" required class="w-full bg-white border border-purple-100 rounded-xl p-3 text-xs outline-none focus:border-brand-primary font-medium" placeholder="관리자 ID를 입력해 주세요">
+                    <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Username</label>
+                    <input type="text" id="admin-username" required class="w-full bg-white border border-purple-100 rounded-xl p-3 text-xs outline-none focus:border-brand-primary font-medium" placeholder="아이디를 입력해 주세요">
                 </div>
                 <div>
-                    <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">PASSWORD</label>
+                    <label class="block text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1">Password</label>
                     <input type="password" id="admin-password" required class="w-full bg-white border border-purple-100 rounded-xl p-3 text-xs outline-none focus:border-brand-primary font-medium" placeholder="비밀번호를 입력해 주세요">
                 </div>
                 <button type="submit" class="w-full bg-brand-primary hover:bg-brand-dark text-white font-bold text-xs py-3.5 rounded-xl transition-all shadow-md">
@@ -848,39 +839,39 @@
         const portfolioData = [
             {
                 imgId: "port-img-1",
-                category: "LIVING ROOM",
-                title: "장덕동 아메시스트 시그니처 거실",
-                desc: "풍요롭고 따뜻한 아메시스트 가죽과 매칭된 천연 대리석 벽체 인테리어입니다. 거실 안쪽으로 매끄러운 원목 간접 등을 수놓아 눈의 피로를 최소화했으며, 오프화이트 소파 패브릭과 융합되어 보라색 고유의 중후하고 귀족적인 감성을 최고급 수준으로 정제해 냈습니다."
+                category: "KITCHEN & DINING",
+                title: "동천동 동천센트럴파크 33평",
+                desc: "기존의 복잡하고 답답해 보이던 주방 벽체 구성을 완전히 소거하고 대면형 대리석 아일랜드를 중앙에 시그니처 레이아웃으로 안착한 고급 리모델링 설계입니다. 한 차원 풍요로운 주방 분위기를 위해 메인 조명 없이 은은한 라인 매립 등과 하부장 간접 등을 수놓았습니다."
             },
             {
                 imgId: "port-img-2",
-                category: "BEDROOM",
-                title: "수완 호반베르디움 호텔형 마스터룸",
-                desc: "고유의 우아한 분위기를 지닌 다크 바이올렛 벨벳 침대 헤드보드와 조광 가능한 프리미엄 무드 등을 기획한 하이엔드 침실 레이아웃입니다. 붙박이 서재와의 매끄러운 파티션 기법을 통하여, 휴식과 간단한 업무 동선 분할을 완벽하게 지원해 줍니다."
+                category: "SUITE ROOM",
+                title: "수완지구 대방노블랜드 42평",
+                desc: "귀족적이고 기품 있는 아메시스트 무드의 스펙트럼 패브릭으로 전체 맞춤 기획한 마스터 베드룸 홈스타일링입니다. 침대 헤드보드의 단단한 라인 분할과 침대 협탁 양측에 배치한 조도 정밀 조절 시스템이 만나 호텔 스위트룸에 있는 듯한 격조 높은 수면 무드를 선사합니다."
             },
             {
                 imgId: "port-img-3",
-                category: "KITCHEN",
-                title: "프라이빗 바이올렛 마블 주방",
-                desc: "상판 전체에 아름다운 아메시스트 퍼플 마블 대리석을 채용하여 예술품 같은 가치를 부여한 공간입니다. 매트한 질감의 다크 차콜 서랍 도어들과 최고 사양의 무소음 후드, 밀레 오븐 라인 등이 대형 아일랜드 카운터 내부로 일체화되어 미니멀한 극강의 주방 디자인을 과시합니다."
+                category: "PENTHOUSE",
+                title: "봉선동 한국아델리움 50평",
+                desc: "벽체를 장식하는 섬세하고 정교한 프렌치 웨인스코팅 프레임 배치와 럭셔리 샴페인 골드 메탈 수전 및 도어핸들을 완벽한 비례로 조합한 하이엔드 거실 인테리어입니다. 거실 창밖으로 흐르는 자연광과 대리석 바닥 마감이 우아하게 융합되어 공간의 가치를 높입니다."
             },
             {
                 imgId: "port-img-4",
-                category: "BATH & SPA",
-                title: "장덕동 펠리스 골드퍼플 스파 바스",
-                desc: "이탈리안 건식 고급 대리석 욕실 패키지로, 매끈한 욕조 외장재와 금빛 수전 액세서리가 은은하게 연출된 최고급 웰니스 공간입니다. 스마트 거울 시스템 및 보라빛 포인트 벽면 라이트 스트립이 도입되어 심신의 피로를 완벽하게 정화시킵니다."
+                category: "APARTMENT",
+                title: "장덕동 호반베르디움 34평",
+                desc: "공간과 공간을 잇는 단조로운 아파트 통로 복도를 한 폭의 럭셔리 아트 갤러리처럼 재구성한 라이팅 테크닉 기반 인테리어입니다. 천장 안쪽으로 군더더기 없이 매립한 라인 조명과 벽체 틈새로 부드럽게 흐르는 간접 등은 거주하는 내내 눈의 피로를 최소화합니다."
             },
             {
                 imgId: "port-img-5",
-                category: "LIVING ROOM",
-                title: "광주 타운하우스 미니멀 갤러리 로비",
-                desc: "미니멀리스트 디자인 미학을 품은 하이엔드 아파트 거실 갤러리 큐레이션입니다. 불필요한 가구 구성을 전부 소거하고 거대한 보라색 유화 캔버스 아트를 중심으로 공간을 구성하여, 여유감과 차분함이 흘러넘치게끔 조력했습니다."
+                category: "RESIDENCE",
+                title: "수완지구 현진에버빌 45평",
+                desc: "천연 대리석 본연의 고급스러운 결을 고스란히 살린 조형 아트월과 함께, 피로를 녹여주는 최고 스펙 독립식 욕조 수전을 매칭한 프리미엄 바스 및 프라이빗 웰니스 테라피 세트입니다. 스마트 거울 및 은은한 매립 조명으로 감성적인 힐링 타임을 제공합니다."
             },
             {
                 imgId: "port-img-6",
-                category: "KITCHEN & DINING",
-                title: "봉선동 펜트하우스 비스포크 다이닝",
-                desc: "가족 구성원들이 한곳에 편안하게 모일 수 있는 정형화된 식사 공간 브랜딩 사례입니다. 부드러운 아르데코 조명 팬던트와 고풍스러운 퍼플 톤의 비스포크 빌트인 패브릭 의자들이 고요하면서도 다정한 하우스 다이닝 무드를 고양시켜 줍니다."
+                category: "RESIDENCE",
+                title: "치평동 금호쌍용 38평",
+                desc: "우아하고 깨끗한 오프화이트를 기저 톤으로 채용하고, 거기에 품격을 수놓는 부드러운 라벤더 보라 톤의 가구를 절묘한 악센트로 정밀하게 매칭한 거실 및 다이닝 가구 큐레이션입니다. 채광에 따라 화사함과 중후한 무드가 오가며 매력적인 일상을 제시합니다."
             }
         ];
 
@@ -1018,34 +1009,6 @@
         // Run carousel layout
         layoutCarousel();
 
-        // 3. Portfolio Filters
-        const tabs = document.querySelectorAll('.portfolio-tab');
-        const items = document.querySelectorAll('.portfolio-item');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const filter = tab.getAttribute('data-filter');
-                
-                tabs.forEach(t => {
-                    t.classList.remove('bg-brand-primary', 'text-white');
-                    t.classList.add('bg-brand-lightGray', 'text-brand-primary');
-                });
-                tab.classList.remove('bg-brand-lightGray', 'text-brand-primary');
-                tab.classList.add('bg-brand-primary', 'text-white');
-
-                items.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    if (filter === 'all' || category === filter) {
-                        item.classList.remove('hidden');
-                        setTimeout(() => item.style.opacity = '1', 50);
-                    } else {
-                        item.style.opacity = '0';
-                        setTimeout(() => item.classList.add('hidden'), 200);
-                    }
-                });
-            });
-        });
-
         // 4. Lightbox Details Handler
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
@@ -1056,7 +1019,7 @@
 
         function openLightbox(index) {
             const data = portfolioData[index];
-            const currentImgElement = document.querySelector(`[data-img-id="${data.imgId}"]`);
+            const currentImgElement = document.querySelector(`[data-img-id="port-img-${index + 1}"]`);
             
             // Get current text content dynamically (supports live edited values)
             const titleElement = document.querySelector(`[data-edit-id="port-title-${index + 1}"]`);
@@ -1351,11 +1314,82 @@
 
             try {
                 localStorage.setItem('dorothy_admin_state', JSON.stringify(savedState));
-                showToast("모든 공간 디자인 변경사항이 브라우저 캐시에 영구 저장되었습니다.", "success");
+                showToast("모든 공간 디자인 변경사항이 브라우저 캐시에 임시 저장되었습니다.", "success");
             } catch (error) {
                 console.error("Storage Error:", error);
                 showToast("저장 한도를 초과했습니다. 교체된 이미지 중 일부가 너무 고용량일 수 있습니다.", "error");
             }
+        }
+
+        // Bake edited DOM state directly into HTML structure and download
+        function exportBakedHTML() {
+            // Clone the entire active document
+            const cloneDoc = document.documentElement.cloneNode(true);
+            
+            // 1. Force remove admin active layout states from the exported body
+            const cloneBody = cloneDoc.querySelector('body');
+            if (cloneBody) {
+                cloneBody.classList.remove('admin-mode-active');
+            }
+            
+            // 2. Hide the admin floating toolbar panel by default on export
+            const cloneAdminBar = cloneDoc.querySelector('#admin-bar');
+            if (cloneAdminBar) {
+                cloneAdminBar.classList.add('hidden', '-translate-y-full');
+                cloneAdminBar.classList.remove('transform', 'translate-y-0');
+            }
+            
+            // 3. Remove all native contenteditable parameters
+            cloneDoc.querySelectorAll('.editable-text').forEach(el => {
+                el.removeAttribute('contenteditable');
+            });
+            
+            // 4. Bake modified text items directly into default elements
+            document.querySelectorAll('[data-edit-id]').forEach(el => {
+                const targetId = el.getAttribute('data-edit-id');
+                const cloneTarget = cloneDoc.querySelector(`[data-edit-id="${targetId}"]`);
+                if (cloneTarget) {
+                    cloneTarget.innerHTML = el.innerHTML;
+                }
+            });
+            
+            // 5. Bake imported base64 graphics directly into tags
+            document.querySelectorAll('[data-img-id]').forEach(img => {
+                const targetId = img.getAttribute('data-img-id');
+                const cloneTarget = cloneDoc.querySelector(`[data-img-id="${targetId}"]`);
+                if (cloneTarget) {
+                    cloneTarget.src = img.src;
+                }
+            });
+            
+            // 6. Bake rearranged section order
+            const mainContainer = document.getElementById('main-section-container');
+            const cloneContainer = cloneDoc.querySelector('#main-section-container');
+            if (mainContainer && cloneContainer) {
+                cloneContainer.innerHTML = '';
+                Array.from(mainContainer.children).forEach(sec => {
+                    const originalSec = cloneDoc.querySelector(`#${sec.id}`);
+                    if (originalSec) {
+                        originalSec.classList.remove('drag-over', 'dragging');
+                        cloneContainer.appendChild(originalSec);
+                    }
+                });
+            }
+
+            // Create a file Blob and trigger automatic secure download
+            const finalizedHtmlContent = '<!DOCTYPE html>\n' + cloneDoc.outerHTML;
+            const blob = new Blob([finalizedHtmlContent], { type: 'text/html;charset=utf-8' });
+            const tempUrl = URL.createObjectURL(blob);
+            
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.href = tempUrl;
+            downloadAnchor.download = 'index.html';
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            document.body.removeChild(downloadAnchor);
+            URL.revokeObjectURL(tempUrl);
+            
+            showToast("수정 완료된 배포용 index.html 파일이 성공적으로 다운로드되었습니다! 이 파일을 깃허브에 업로드하세요.", "success");
         }
 
         // Load and compile changes on window boot
